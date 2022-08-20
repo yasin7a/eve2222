@@ -13,7 +13,6 @@ const BookingItem = ({ data }) => {
 	const [rev, setrev] = useState(false);
 	const [pay, setpay] = useState(false);
 	const [number, setnumber] = useState(true);
-  console.log(obj)
 	function check1() {
 		if (data?.reviewID !== null) {
 			setrev(true);

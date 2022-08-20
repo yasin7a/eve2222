@@ -172,7 +172,6 @@ const RegForm = () => {
 				query: serviceAPI,
 				variables: { input: { ...serviceData,email:userData.email, id: query.attributes.sub ,status: "Pending",uploadYourPhoto:"ProfilePicture/Vendor" + query.attributes.sub + ".png",eventsCompleted:0} },
 			});
-			console.log(result)
 			dispatch({
 				type: "UPDATE_SUCCESS",
 				payload: {

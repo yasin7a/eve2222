@@ -41,7 +41,6 @@ const OrderForm = ({ passData }) => {
   let handleOrderTime = (id) => {
     setCurrOrder(id);
   };
-  console.log(passData);
   const router = useRouter();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -80,7 +79,6 @@ const OrderForm = ({ passData }) => {
           toast.error(`Please update your phone number.`);
           router.push("/dashboard/profile");
         }
-        console.log(user?.phoneNumber);
         if (user?.phoneNumber !== null) {
           let data = {
             address: payloadDataSingle?.yourAddress,
@@ -102,7 +100,6 @@ const OrderForm = ({ passData }) => {
             title: passData?.title,
             packageName: passData?.packName + " " + passData?.packageStandard,
           };
-          console.log(data);
           await API.graphql({
             query: mutations.createOrders,
             variables: { input: data },

@@ -16,7 +16,6 @@ const DashboardLinks = ({ userTitle, img, alt, isUser_vendor }) => {
 
   const router = useRouter();
 
-  console.log("dashboardlink", isUser_vendor);
   return (
     <div
       className="dashboardlink bg-white w-[235px] rounded-[8px] absolute top-10 -right-14 sm:-right-5"

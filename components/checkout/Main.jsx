@@ -25,7 +25,6 @@ let validationSchema = yup.object({
     .required("Required field"),
 });
 const Main = ({ Data, initialValues }) => {
-  console.log(Data.totalPayment);
   const [promoValue, setPromoValue] = useState({
     promoCode: "",
   });
@@ -116,7 +115,6 @@ const Main = ({ Data, initialValues }) => {
 
   useEffect(() => setGetOffer(Data.totalPayment), [Data.totalPayment]);
 
-  console.log(getOffer);
   return (
     <div className="container m-all checkout">
       <div className="flex gap-5 flex-col md:flex-row">

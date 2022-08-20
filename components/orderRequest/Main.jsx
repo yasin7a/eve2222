@@ -10,7 +10,6 @@ const Main = ({vendor,bool,boolval,setorder,orderData,service}) => {
   const [showForm, setShowForm] = useState(false);
   const [passData, setPassData] = useState(false);
   const [Files, setFiles] = useState([])
-  console.log(service)
   let handleSHowOrderFrom = (quality) => {
     
     let obj ={...orderData[quality],

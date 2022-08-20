@@ -101,7 +101,6 @@ let finaSubmitToBackEnd = async (
 		nidBackSide: "VendorNID/Vendor" + attributes.sub + "BackSide" + ".png",
 	};
 	try {
-		console.log(vendorDetails);
 		const userFromCognito = await Auth.currentAuthenticatedUser();
 		userFromCognito.Session = userFromCognito.signInUserSession;
 		Auth.updateUserAttributes(userFromCognito, {
@@ -113,7 +112,6 @@ let finaSubmitToBackEnd = async (
 			query: mutations.updateVendor,
 			variables: { input: vendor },
 		});
-		console.log(updatedVendor);
 		const updatedVendorDetails = await API.graphql({
 			query: serviceAPI,
 			variables: { input: vendorDetails },

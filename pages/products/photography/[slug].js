@@ -13,7 +13,6 @@ function ViewPhotography({posts}){
 }
 
 export async function getStaticProps({params}) {
-  console.log(params); 
 
     const res =  await API.graphql({
       query: queries.getPhotography,
@@ -22,7 +21,6 @@ export async function getStaticProps({params}) {
       
     });
     const posts = await res?.data?.getPhotography
-  console.log(posts)
     return {
       props: {
         posts,
@@ -43,7 +41,6 @@ export async function getStaticPaths() {
   });
 
     const photographer = await res?.data?.listPhotographies?.items
-    console.log(photographer)
     const paths = photographer.map((e) => ({
       params: { slug: e.id },
     }))

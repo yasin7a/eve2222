@@ -18,7 +18,6 @@ import * as mutations from "../../../src/graphql/mutations";
 import {useRouter} from 'next/router'
 const Main = ({ addPackAgeInitalValue = initalValue, iseEDit,index,setEditIsOpen }) => {
   const router =useRouter()
-  console.log(index)
   const { verifyUser } = useUserOrVendor();
   let { attributes } = verifyUser?.isUser_vendorAttr || {};
   let serviceCheck = attributes?.["custom:service"];
@@ -75,16 +74,13 @@ check()
 		}
 	}, []);
   let onSubmit = async (values, actions) => {
-    console.log(iseEDit)
     try {
       await debounce(2000);
-      console.log(files)
 
           let allPackageImage = [];
           if (iseEDit) {
             let i=0
             await files.map(async (e) => {
-              console.log(e)
               const fileName = `PackageImages/${attributes.sub}/${values.packageName.replace(/ /g,"_")}${attributes.sub}${i++}.png`;
               allPackageImage.push(fileName);
           await Storage.put(
@@ -94,7 +90,6 @@ check()
               
             });
           values.packageImage = [...allPackageImage];
-        console.log(values.packageImage)
         let details =storage.vendorDetails
         let balance =storage.balance
         let prevPackage= storage.vendor?.packages
@@ -102,7 +97,6 @@ check()
         let newData =JSON.stringify(values)
         
         prevPackage[index]= newData
-        console.log(prevPackage)
         let data ={id:attributes.sub,packages:prevPackage}
         const updatedVendorDetails = await API.graphql({
           query: serviceAPI,
@@ -119,16 +113,13 @@ check()
             
           },
         })
-        console.log(values);
   
         setFiles([]);
         setFileError(false);
         actions.resetForm();
         toast.success(`Package updated successfully`);
-        console.log('I was logged')
         setEditIsOpen(false)
       }else{
-        console.log('I was logged else')
         if (addPackAgeInitalValue.packageImage.length > 0) {
           values.packageImage = [...addPackAgeInitalValue.packageImage];
         } else {
@@ -136,7 +127,6 @@ check()
           if (files) {
             let i=0
             await files.map(async (e) => {
-              console.log(e)
               const fileName = `PackageImages/${attributes.sub}/${values.packageName.replace(/ /g,"_")}${attributes.sub}${i++}.png`;
               allPackageImage.push(fileName);
           await Storage.put(
@@ -173,7 +163,6 @@ check()
             
           },
         })
-        console.log(values);
   
         setFiles([]);
         setFileError(false);

@@ -5,7 +5,6 @@ import OutIcon from "./icons/OutIcon";
 import placeholder from "../../utils/imageBlurLoader";
 
 const RegPop = ({ handlecloseReg }) => {
-  console.log("regpop");
   return (
     <div
       className="fixed z-50 bg-[#1a1818d1] inset-0  h-screen  px-4 text-center flex flex-col items-center 

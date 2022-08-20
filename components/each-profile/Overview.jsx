@@ -23,7 +23,6 @@ let facility = [
 const Overview = (data) => {
   let info =data?.data||[]
  let review = info?.Reviews?.items
- console.log(review)
   return (
     <div className="container">
       <div className="max-w-[700px] px-2 sm:px-5">

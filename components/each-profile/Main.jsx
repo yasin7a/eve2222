@@ -18,7 +18,6 @@ const Main = ({data,service}) => {
   const [order, setorder] = useState([])
   const [vendorData, setvendorData] = useState([])
   const [boolOrder, setboolOrder] = useState(false)
-  console.log(data)
   const openImageViewer = useCallback((i) => {
     setCurrentImage(i);
     setIsViewerOpen(true);

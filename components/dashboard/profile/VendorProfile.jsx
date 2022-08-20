@@ -78,7 +78,6 @@ const VendorProfile = ({ attributes, service }) => {
 			}
 		}
 		async function getImagesf() {
-			console.log(keyf);
 			if (keyf !== undefined) {
 				const signedURL = await Storage.get(keyf);
 				const response = await fetch(signedURL);

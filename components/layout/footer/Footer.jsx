@@ -22,9 +22,7 @@ let CopyRightSection = () => {
 
 const Footer = () => {
   let isMobile = useMediaQuery("(min-width: 1024px)");
-  let handleClick = () => {
-    console.log("boooom");
-  };
+ 
   return (
     <>
     <footer>

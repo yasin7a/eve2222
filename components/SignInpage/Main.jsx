@@ -91,8 +91,6 @@ const Main = () => {
         query: queries.getBalance,
         variables: { id: id }
       });
-      console.log(vendor)
-      console.log(vendorDetails)
 				dispatch({
 				  type: "LOGIN_SUCCESS",
 				  payload:{
@@ -105,12 +103,10 @@ const Main = () => {
 				})
      }
 if(data==="user"){
-	console.log(id)
 	const user = await API.graphql({
         query: queries.getUser,
         variables: { id: id }
       });
-	  console.log(user)
 	  dispatch({
 		type: "UPDATE_SUCCESS",
 		payload: {

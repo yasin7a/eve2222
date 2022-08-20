@@ -59,7 +59,6 @@ const GiveReview = ({service,id}) => {
 			
 		} 
     // let obj = JSON.parse(values?.packageName)
-    console.log(service)
     try {
       let average =(values.ValueOfMoneyReview+values.ServiceReview+values.BehaviourReview)/3
       let obj = {
@@ -72,14 +71,12 @@ const GiveReview = ({service,id}) => {
         userID:storage?.user?.id
       }
       var person = {[serviceAPI]:id}; 
-      console.log({...obj,...person})
 			const reviewQuery = await API.graphql({
 				query: mutations.createReview,
 				variables: {
 					input: {...obj,...person}
 				}
 			});
-    console.log(reviewQuery)
     } catch (error) {
       console.log(error);
     }

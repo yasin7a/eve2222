@@ -52,7 +52,6 @@ const Main = () => {
   useEffect(()=>{
     setBookingData(Data)
   },[Data])
-  console.log(Data);
   return (
     <>
       <OrderList

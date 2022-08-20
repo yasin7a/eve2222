@@ -55,7 +55,6 @@ const ProfileInfo = ({ slideImg, openImageViewer,data }) => {
       },
     ],
   };
-  console.log(data)
   let years =JSON.parse(data.yearsOfExperience)
   const [serviceLocation, setserviceLocation] = useState("")
   const [rating, setrating] = useState(0)

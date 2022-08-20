@@ -23,7 +23,6 @@ const SectionSubscribe = () => {
     validateOnBlur: true,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
       setCongrats(true);
     },
   });
